@@ -1,0 +1,21 @@
+@import 'src/colors';
+@import 'src/layout';
+
+nav .app-menu-item {
+  @include create-space('right', 2);
+  @include create-space('bottom', 0.3, 'padding');
+  text-transform: uppercase;
+}
+
+nav .app-menu-item:hover {
+  text-decoration: none;
+}
+
+nav .app-menu-item:before {
+  right: 100%;
+}
+
+nav .app-menu-item.is-active:before {
+  right: 0%;
+}
+

@@ -1,0 +1,15 @@
+$baseUnitValue: 10;
+@mixin create-space($direction, $units: 1, $type: margin) {
+  #{$type}-#{$direction}: #{$baseUnitValue * $units}px;
+}
+
+@mixin animable($time: 0.3) {
+  -webkit-transition: all #{$time}s;
+  transition: all #{$time}s;
+}
+
+@mixin divider($size: 1) {
+  @include create-space('top', $size);
+  @include create-space('bottom', $size);
+  background-color: transparent;
+}

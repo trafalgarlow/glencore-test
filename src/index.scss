@@ -1,0 +1,136 @@
+@import '~hover.css/css/hover-min.css';
+@import 'colors';
+@import 'layout';
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+  background-color: $lightColor;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.break-text {
+  word-break: break-all;
+}
+
+hr.content-divider {
+  @include divider(2.5);
+}
+
+hr.content-divider.small {
+  @include divider(1);
+}
+
+hr.content-divider.extra-small {
+  @include divider(0.5);
+}
+
+h6.table-header-text {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.toast-message-success {
+  & div[class*="MuiSnackbarContent"] {
+    background-color: $successColor;
+  }
+}
+
+.toast-message-error {
+  & div[class*="MuiSnackbarContent"] {
+    background-color: $errorColor;
+  }
+}
+
+.toast-message-warning {
+  & div[class*="MuiSnackbarContent"] {
+    background-color: $warningColor;
+  }
+}
+
+// Hover Effects Override
+// ==============================
+.hvr-float-shadow:before {
+  top: 75%;
+}
+
+button.hvr-radial-in,
+button.hvr-radial-in:not(:hover) {
+  color: $highlightColor;
+  @include animable();
+}
+
+button.hvr-radial-in:disabled {
+  color: $disabledColor;
+}
+
+button.hvr-radial-in:not(:hover):before {
+  transform: scale(2);
+  -webkit-transform: scale(2);
+}
+
+button.hvr-radial-in:disabled:before {
+  transform: scale(0);
+  -webkit-transform: scale(0);
+}
+
+.hvr-radial-in:before {
+  background-color: $darkColor;
+  color: $highlightColor;
+}
+
+.hvr-radial-out:before {
+  background-color: $darkColor;
+  color: $lightColor;
+}
+
+.hvr-radial-out:not(:hover):before {
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.hvr-radial-out:hover:before {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+button.hvr-radial-out,
+button.hvr-radial-out:not(:hover) {
+  color: $darkColor;
+}
+
+.hvr-fade:active,
+.hvr-fade:focus,
+.hvr-fade:hover {
+  background-color: $highlightColor;
+}
+
+.hvr-underline-from-left:before {
+  background: $highlightColor;
+}
+
+// Material UI Overrides
+// ==============================
+div[class^="MuiDialogContent"] {
+  overflow: hidden;
+}
+
+div[class^="MuiFormControl"] {
+  @include create-space('top', 2);
+}
+
+button[class^="MuiButtonBase"] {
+  outline: none;
+}
