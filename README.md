@@ -3,7 +3,7 @@
 Clone the current repository:
 
 ```bash
-git clone https://github.com/quirimmo/glencore-dictionary-test.git
+git clone https://github.com/trafalgarlow/glencore-test.git
 ```
 
 Install the dependencies:
